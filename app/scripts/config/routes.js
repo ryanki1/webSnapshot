@@ -13,17 +13,17 @@
     angular.module('alzApp')
         .config(['$routeProvider', function($routeProvider){
             $routeProvider
-                .when('/login2Contact-web', {
+                .when('/', {
                     controller: 'contactController'
                 })
                 .when('/contact', {
-    //                templateUrl: 'module/contact/view/contact.html',
-                    controller: 'contactController',
-                    resolve: {
-                        loadContactPage: ['securityAuthorization', function(authorization){
-                            return authorization.requireAdminUser();
+                    templateUrl: '/scripts/module/contact/view/contact.html',
+                    controller: 'contactController'
+/*                    resolve: {
+                        loadcontactpage: ['securityauthorization', function(authorization){
+                            return authorization.requireadminuser();
                         }]
-                    }
+                    }*/
                 })
                 .when('/fred', {
                     controller: 'fredController'

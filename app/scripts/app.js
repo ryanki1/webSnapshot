@@ -4,7 +4,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-angular('alzApp', [
+(function(){
+
+    angular.module('alzApp', [
     /*
      * TODO: rename security.login to loginModule
      */
@@ -14,17 +16,10 @@ angular('alzApp', [
     'security.login',
     'contactModule',
     'security'
-])
-    .config(function($routeProvider){
-        $routeProvider
-            .when('/contact', {
-                templateUrl: '/app/module/contact/view/contact.html',
-                controller: 'contactController',
-                resolve: 'requireAdminUser'
-            })
-            .otherwise({
-              redirectTo: '/'
-            });
-    });
-
-
+    ])
+        .config(['$locationProvider', function($locationProvider){
+            $locationProvider
+                .html5Mode(true);
+            }
+        ]);
+}());

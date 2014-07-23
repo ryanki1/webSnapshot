@@ -5,12 +5,12 @@
 
 var ALZAPP = ALZAPP || {};
 ALZAPP = {
-  env: "development"
+  env: 'development'
 };
 
 
 (function(app){
-  if (app.env === "development"){
+  if (app.env === 'development'){
 
   }
   else {

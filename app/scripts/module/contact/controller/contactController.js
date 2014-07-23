@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 
-(function(){
-    angular.module('contactModule')
+'use strict';
+angular.module('contactModule', [])
         .controller('contactController', ['$scope', function($scope){
-            $scope.x = "100";
-            $scope.y = "100";
+            $scope.x = '100';
+            $scope.y = '100';
         }]);
-});
