@@ -1,22 +1,39 @@
 'use strict';
 
-describe('controllers', function(){
-  var scope;
+describe('Test to print out jasmine version', function() {
+    it('prints jasmine version', function() {
+        console.log('jasmine-version:' + jasmine.getEnv().versionString());
+    });
+});
 
-  beforeEach(module('alzApp'));
+describe('Controller governing FindAddress widget on contact Page', function(){
+    var scope;
 
-  beforeEach(inject(function($rootScope) {
-  	scope = $rootScope.$new();
-  }));
+    beforeEach(module('alzApp'));
 
-  it('should define more than 5 awesome things', inject(function($controller) {
-    expect(scope.awesomeThings).toBeUndefined();
+    beforeEach(inject(function($rootScope) {
+    scope = $rootScope.$new();
+    }));
 
-    $controller('MainCtrl', {
+    it('should initialize an address list', inject(function($controller) {
+
+        $controller('contactController', {
+            $scope: scope
+        });
+        expect(scope.addresses.length > 0).toBeTruthy();
+
+    }));
+
+    it('should call siloAddresses whenever postcode input changes', inject(function($controller) {
+
+    $controller('contactController', {
       $scope: scope
-  	});
+    });
 
-    expect(angular.isArray(scope.awesomeThings)).toBeTruthy();
-    expect(scope.awesomeThings.length > 5).toBeTruthy();
-  }));
+    spyOn(scope, 'siloAddresses');
+    scope.$apply();
+    scope.postcodeInputFragment = '79';
+    scope.$apply();
+    expect(scope.siloAddresses.callCount).toEqual(2); // Actually twice because, including undefined entry on page load
+    }));
 });

@@ -4,13 +4,11 @@
 'use strict';
 
 var ALZAPP = ALZAPP || {};
-ALZAPP = {
-  env: 'development'
-};
+ALZAPP.ENV = 'development';
 
 
 (function(app){
-  if (app.env === 'development'){
+  if (app.ENV === 'development'){
 
   }
   else {

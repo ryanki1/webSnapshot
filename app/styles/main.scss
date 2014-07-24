@@ -16,3 +16,60 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     width: 50px;
   }
 }
+
+// Appearance
+
+.b_1 {
+  border: solid grey 1px;
+}
+
+.b {
+  font-weight: bold;
+}
+
+.fs_p8 {
+  font-size: 0.8em;
+}
+
+.fs_p7 {
+  font-size: 0.7em;
+}
+
+.lh_1p2 {
+  line-height: 120%;
+}
+
+.w_220p {
+  width: 220px;
+}
+
+.w_1 {
+  width: 100%;
+}
+
+.tw_220p {
+
+  @include text-overflow();
+}
+
+.pt_10p {
+  padding-top: 10px;
+}
+
+.pl_10p {
+  padding-left: 10px;
+}
+
+.pr_10p {
+  padding-right: 10px;
+}
+
+
+ol, ul {
+  list-style-type: none;
+  li {
+    &:hover {
+      background-color: darkgray;
+    }
+  }
+}

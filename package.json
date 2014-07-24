@@ -33,14 +33,15 @@
     "require-dir": "~0.1.0",
     "browser-sync": "1.1.x",
     "http-proxy": "~1.1.4",
-    "phantomjs": "~1.9.7-8",
     "gulp-protractor": "0.0.7",
     "gulp-plumber": "^0.6.3",
     "protractor": "~0.24.2",
     "uglify-save-license": "^0.4.1",
     "gulp-grunt": "~0.5.2",
     "grunt": "~0.4.5",
-    "grunt-file-blocks": "~0.3.0"
+    "grunt-file-blocks": "~0.3.0",
+    "phantomjs": "~1.9.7-15",
+    "karma-chrome-launcher": "~0.1.4"
   },
   "engines": {
     "node": ">=0.10.0"

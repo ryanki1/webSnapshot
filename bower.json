@@ -6,13 +6,10 @@
     "angular": "1.2.x",
     "angular-sanitize": "1.2.x",
     "angular-route": "1.2.x",
-    "bootstrap-sass-official": "3.1.x"
+    "bootstrap-sass-official": "3.1.x",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
-    "angular-mocks": "1.2.x",
-    "ui.bootstrap": "~0.11.0"
-  },
-  "resolutions": {
-    "angular": "1.2.x"
+    "angular-mocks": "1.2.x"
   }
 }

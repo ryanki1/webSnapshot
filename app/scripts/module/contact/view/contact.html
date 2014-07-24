@@ -3,12 +3,37 @@
     Author:     KGR
     Company:    ALZ
 -->
-<div class="well well-sm findAddressFixture">
-    <input type="text" placeholder="Please enter a postcode">
-    <ol>
-        <li>Herrenstrasse 48, 79098 Freiburg</li>
-        <li>Konviktstrasse 10, 77554 Stuttgart</li>
-        <li>Pampelmoussegasse 2, 55444 Frankfurt am Main</li>
-    </ol>
+<div class="well well-sm w_220p findAddressFixture">
+    <input
+           class="postcode pl_10p w_1 fs_p8 b"
+           ng-class="{color:(selectedAddress ? grey: darkgrey)}"
+           type="text"
+           placeholder="Please enter a postcode"
+           ng-model="postcodeInputFragment">
+<!--    <select
+            id="selectAddress"
+            class="w1" ng-options="address as (address.address1 + ', ' + address.postcode) for address in getAddresses()"
+            ng-model="address">
+       <option value="">Please select an address</option>
+       <option value="$index">{{address}}</option>
+    </select>-->
+    <input class="pl_10p pr_10p w_1 fs_p8 b tw_220p"
+           type="text"
+           placeholder="Please select an address"
+           ng-model="selectedAddress">
+    <div
+        class="b_1 fs_p7 lh_1p2 w_1"
+        ng-show="addressSuggestions">
+        <ol
+            class="pt_10p pl_10p"
+            ng-model="selectedAddress">
+            <li
+                ng-repeat="address in addressSuggestions"
+                ng-init="localAddress=address.address1+', '+address.postcode+', '+address.city"
+                ng-click = "selectAddress(localAddress)">
+                {{localAddress}}
+            </li>
+        </ol>
+    </div>
 </div>
 
