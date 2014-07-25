@@ -4,9 +4,13 @@ module.exports = function(grunt) {
     fileblocks: {
       dev: {
         files: [
-          { src: 'app/index.html',
+          {
+            options: {
+                prefix: '/'
+            },
+            src: 'app/index.html',
             blocks: {
-            'app': {src: 'app/scripts/**/*.js'}
+            'app': {src: ['app/scripts/**/*.js','app/vendor/**/*.js']}
             }
           }
         ]

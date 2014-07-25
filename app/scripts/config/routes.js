@@ -17,7 +17,7 @@
                     controller: 'contactController'
                 })
                 .when('/contact', {
-                    templateUrl: '/scripts/module/contact/view/contact.html',
+                    templateUrl: 'partials/contact.html',
                     controller: 'contactController'
 /*                    resolve: {
                         loadcontactpage: ['securityauthorization', function(authorization){

@@ -5,14 +5,13 @@
  */
 
 'use strict';
-
+var window = window || {};
 var ALZAPP = ALZAPP || {};
 ALZAPP.SUGGESTION_CAP = 6;
-(function(app){
+(function(app, _){
 
     angular.module('contactModule', [])
         .controller('contactController', ['$scope', function($scope){
-            var suggestionCap = 2;
             $scope.addresses = [
                 {
                     'address1': 'Herrenstrasse 48',
@@ -45,7 +44,7 @@ ALZAPP.SUGGESTION_CAP = 6;
             );
             $scope.siloAddresses = function(){
                 // Returns all addresses or capped version for an input of nothing
-                $scope.postcodeInputFragment = $scope.postcodeInputFragment === "" ? undefined : $scope.postcodeInputFragment;
+                $scope.postcodeInputFragment = $scope.postcodeInputFragment === '' ? undefined : $scope.postcodeInputFragment;
                 var jsonSilo = _.filter(
                     $scope.addresses,
                     function(ele){
@@ -53,10 +52,10 @@ ALZAPP.SUGGESTION_CAP = 6;
                     }
                 );
                 $scope.addressSuggestions = _.first(jsonSilo, app.SUGGESTION_CAP); // Trigger for showing address suggestions
-            }
+            };
             $scope.selectAddress = function(address){
                 $scope.selectedAddress = address;
                 $scope.postcodeInputFragment = undefined;
-            }
+            };
         }]);
-}(ALZAPP));
+}(ALZAPP,window._));

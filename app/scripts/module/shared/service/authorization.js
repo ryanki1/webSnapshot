@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('security.authorization', ['security.service'])
 
 // This service provides guard methods to support AngularJS routes.
@@ -20,6 +22,7 @@ angular.module('security.authorization', ['security.service'])
       // (use this in a route resolve to prevent non-authenticated users from entering that route)
       requireAuthenticatedUser: function() {
         var promise = security.requestCurrentUser().then(function(userInfo) {
+          console.log('User info: ' + userInfo);
           if ( !security.isAuthenticated() ) {
             return queue.pushRetryFn('unauthenticated-client', service.requireAuthenticatedUser);
           }
@@ -31,6 +34,7 @@ angular.module('security.authorization', ['security.service'])
       // (use this in a route resolve to prevent non-administrators from entering that route)
       requireAdminUser: function() {
         var promise = security.requestCurrentUser().then(function(userInfo) {
+          console.log('User info: ' + userInfo);
           if ( !security.isAdmin() ) {
             return queue.pushRetryFn('unauthorized-client', service.requireAdminUser);
           }

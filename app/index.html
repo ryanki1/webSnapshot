@@ -19,11 +19,11 @@
         <!-- endbuild -->
 
         <!-- build:css({.tmp,app}) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css"></link>
+        <link rel="stylesheet" href="/styles/main.css"></link>
         <!-- endbuild -->
 
         <!-- build:js scripts/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="/bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
     </h:head>
     <h:body>
@@ -37,10 +37,10 @@
             <h1>Hello World, facelets at your service !</h1>
 
             <p:panel id="myAnonPanel" header="Anonymous Login" rendered="true">
-                <a href="/contact">Go direct to contact details without Admin login should fail :-(</a>
+                <a href="./contact">Go direct to contact details without Admin login should fail :-(</a>
             </p:panel>                
             <p:panel id="myAdminPanel" header="Admin Login" rendered="true">
-                <a href="/loginAdmin">Admin Login to contact details should pass :-)</a>
+                <a href="./loginAdmin">Admin Login to contact details should pass :-)</a>
             </p:panel>        
         </h:form>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -54,29 +54,29 @@
         </script>
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
-        <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/bower_components/angular-route/angular-route.js"></script>
+        <script src="/bower_components/lodash/dist/lodash.compat.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <!-- build:js({app,vendor,.tmp}) scripts/main.js -->
         <!-- fileblock:js app -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/config/build.js"></script>
-        <script src="scripts/config/routes.js"></script>
-        <script src="scripts/module/contact/contactModule.js"></script>
-        <script src="scripts/module/contact/controller/contactController.js"></script>
-        <script src="scripts/module/login/controller/LoginFormController.js"></script>
-        <script src="scripts/module/login/directive/toolbar.js"></script>
-        <script src="scripts/module/login/loginModule.js"></script>
-        <script src="scripts/module/shared/service/interceptor.js"></script>
-        <script src="scripts/module/shared/service/retryQueue.js"></script>
-        <script src="scripts/module/shared/service/security.js"></script>
-        <script src="scripts/module/shared/service/authorization.js"></script>
-        <script src="scripts/module/shared/sharedModule.js"></script>
-        <script src="scripts/vendor/ui-bootstrap-custom-tpls-0.10.0.js"></script>
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/config/build.js"></script>
+        <script src="/scripts/config/routes.js"></script>
+        <script src="/scripts/module/contact/contactModule.js"></script>
+        <script src="/scripts/module/contact/controller/contactController.js"></script>
+        <script src="/scripts/module/login/controller/LoginFormController.js"></script>
+        <script src="/scripts/module/login/directive/toolbar.js"></script>
+        <script src="/scripts/module/login/loginModule.js"></script>
+        <script src="/scripts/module/shared/service/authorization.js"></script>
+        <script src="/scripts/module/shared/service/interceptor.js"></script>
+        <script src="/scripts/module/shared/service/retryQueue.js"></script>
+        <script src="/scripts/module/shared/service/security.js"></script>
+        <script src="/scripts/module/shared/sharedModule.js"></script>
+        <script src="/vendor/ui-bootstrap-custom-tpls-0.10.0.js"></script>
         <!-- endfileblock -->
         <!-- inject:partials -->
         <script src="..//.tmp/partials/main.js"></script>

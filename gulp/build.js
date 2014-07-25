@@ -59,6 +59,12 @@ gulp.task('partials', function () {
     .pipe($.size());
 });
 
+gulp.task('partials:dev', function () {
+    return gulp.src('app/partials/**/*.html')
+        .pipe(gulp.dest("dist/partials"))
+        .pipe($.size());
+});
+
 gulp.task('html', ['styles', 'scripts', 'partials'], function () {
   var jsFilter = $.filter('**/*.js');
   var cssFilter = $.filter('**/*.css');
@@ -71,7 +77,7 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
       addPrefix: '../'
     }))
     .pipe($.useref.assets())
-    .pipe($.rev())
+/*    .pipe($.rev())*/
     .pipe(jsFilter)
     .pipe($.ngmin())
     .pipe($.uglify({preserveComments: saveLicense}))
@@ -82,12 +88,12 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
     .pipe(cssFilter.restore())
     .pipe($.useref.restore())
     .pipe($.useref())
-    .pipe($.revReplace())
+    /*.pipe($.revReplace())*/
     .pipe(gulp.dest('dist'))
     .pipe($.size());
 });
 
-gulp.task('html:dev', ['styles:dev', 'scripts:dev', 'partials'], function () {
+gulp.task('html:dev', ['styles:dev', 'scripts:dev', 'partials:dev'], function () {
   var jsFilter = $.filter('**/*.js');
   var cssFilter = $.filter('**/*.css');
 

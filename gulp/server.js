@@ -52,6 +52,10 @@ gulp.task('serve:dist', ['build'], function () {
   browserSyncInit('dist');
 });
 
+gulp.task('serve:dist:dev', ['build:dev'], function () {
+    browserSyncInit('dist');
+});
+
 gulp.task('serve:e2e', function () {
   browserSyncInit(['app', '.tmp'], null, []);
 });
